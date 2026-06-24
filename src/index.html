@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frontier Distributor Audit Readiness Portal</title>
+  <meta name="description" content="Interactive audit readiness workspace for Frontier Distributor designation preparation.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-top">
+      <div class="brand">
+        <div class="logo" aria-label="Microsoft style four-square mark" role="img"><i></i><i></i><i></i><i></i></div>
+        <div>
+          <p class="eyebrow">Microsoft AI Cloud Partner Program</p>
+          <h1>Frontier Distributor Audit Readiness Portal</h1>
+          <p class="subtitle">An interactive readiness workspace for Microsoft consultants and CSP distributors to prepare evidence, owners, demos, regional coverage, quantitative score checks, and mock audit responses.</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="exportJson">Export JSON</button>
+        <label class="file-button">Import JSON <input type="file" id="importJson" accept="application/json"></label>
+        <button class="secondary" id="printPage">Print</button>
+        <button class="secondary" id="resetData">Reset</button>
+        <span id="lastSaved">Not saved yet</span>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Portal sections">
+      <button class="active" data-nav="dashboard">Dashboard</button>
+      <button data-nav="profile">Profile and waivers</button>
+      <button data-nav="metrics">Quantitative score</button>
+      <button data-nav="checklist">Audit checklist</button>
+      <button data-nav="regional">Regional readiness</button>
+      <button data-nav="mock">Mock audit</button>
+      <button data-nav="templates">Templates</button>
+      <button data-nav="gap">Gap report</button>
+      <button data-nav="fees">Planning and fees</button>
+    </nav>
+    <div class="disclaimer">
+      This portal is an audit readiness aid. It does not upload evidence files and does not replace the ISSI assessment or Microsoft final designation decision.
+    </div>
+  </header>
+
+  <main>
+    <section id="dashboard" class="section active">
+      <div id="dashboardPanel"></div>
+    </section>
+
+    <section id="profile" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Profile and waiver setup</h2>
+          <p>Set the distributor profile first. These values drive region multipliers, waiver logic, regional rows, and fee estimates.</p>
+        </div>
+      </div>
+      <div id="profilePanel"></div>
+    </section>
+
+    <section id="metrics" class="section">
+      <div id="metricsPanel"></div>
+    </section>
+
+    <section id="checklist" class="section">
+      <div id="checklistPanel"></div>
+    </section>
+
+    <section id="regional" class="section">
+      <div id="regionalPanel"></div>
+    </section>
+
+    <section id="mock" class="section">
+      <div id="mockPanel"></div>
+    </section>
+
+    <section id="templates" class="section">
+      <div id="templatesPanel"></div>
+    </section>
+
+    <section id="gap" class="section">
+      <div id="gapPanel"></div>
+    </section>
+
+    <section id="fees" class="section">
+      <div id="feesPanel"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
